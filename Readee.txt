@@ -22,7 +22,7 @@ The web-app could be a little bit sloppy and buggy at times in your device, if y
 Thanks for reviewing!
 
 About me:
-Name: Aryan Gaikwad
+Name: Aryan Neelam
 Email: aryan191990@gmail.com
 gitHub: https://github.com/AmazingAryan
 LinkedIn: https://www.linkedin.com/in/aryan-neelam-08aa66218/
