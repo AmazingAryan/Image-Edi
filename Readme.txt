@@ -1,0 +1,32 @@
+Greetings,
+
+This is the project for task assigned in the given assignment to build an image editor.
+
+For mobile view-> max width is 768px
+    desktop view-> min width is 768px
+
+Features: 
+1. Crop
+2. Zoom
+3. Rotate
+4. Flip
+5. Clip images in shapes like heart, square, rectange and circle.
+
+Dependencies:
++ Cropper.js library
+
+Dev-note:
+I have built this code purely using vanilla js as mentioned in the task and also used cropperjs for convinience.
+The web-app could be a little bit sloppy and buggy at times in your device, if you find any bug, do let me know, I'll try to fix it.
+
+Thanks for reviewing!
+
+About me:
+Name: Aryan Gaikwad
+Email: aryan191990@gmail.com
+gitHub: https://github.com/AmazingAryan
+LinkedIn: https://www.linkedin.com/in/aryan-neelam-08aa66218/
+
+
+
+

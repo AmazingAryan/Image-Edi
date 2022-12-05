@@ -1,0 +1,482 @@
+@media only screen and (max-width: 768px) {
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
+
+html{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-content: center;
+    font-family: 'Maven Pro', sans-serif;
+    background: white;
+    position: relative;
+}
+/* image area and preview */
+.image-container{
+    padding: 20px;
+    width: 90%;
+    height: calc(100% - 100px);
+    border-right: 1px solid rgba(255, 255, 255, 0.239);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.239);
+}
+.image-workspace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.preview-container{
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.preview-cover{
+    overflow: hidden;
+}
+.preview-container span{
+    display: inline;
+    justify-content: center;
+}
+#output{
+    --shape: none;
+    clip-path: polygon(var(--shape));
+}
+#menu {
+    
+    flex-direction: row;
+    place-content: flex-end;
+    justify-content: baseline;
+    position: relative;
+}
+.menu-controls{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    place-content: flex-end;
+    justify-content: baseline;
+    background: gray;
+    
+}
+.menu-controls li{
+  list-style: none;
+  display: flex;
+  flex-direction: row ;
+  float: right;
+  align-items: flex-end;
+}
+.menu-controls li svg{
+    position: relative;
+        display: inline;
+        border-radius: 50%;
+        padding: 4px;
+        transition-duration: .4s;
+        margin-left: 10px;
+        border: 1px solid transparent;
+        fill: white;
+        background-color: rgba(255, 255, 255, 0.129);
+}
+.menu-controls li svg:active{
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.crop {
+    display: inline;
+    border-radius: 50%;
+    padding: 4px;
+    transition-duration: .4s;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.129);
+    padding: 2px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+.cropImageBtn{
+    padding-top: 5px;
+    border: 0px;
+    background: none;
+    color: white;
+}
+.crop:hover:hover{
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* action button */
+.action-button{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    place-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.239);
+}
+.upload-btn{
+    display: flex;
+    flex-direction: column;
+}
+label {
+    align-self: center;
+    color: gray;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.action-button .upload{
+        width: 170px;
+        height: 35px;
+        margin: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: rgba(10, 126, 62, 0.761);
+        color: rgb(255, 255, 255);
+        border-radius: 3px;
+        outline: none;
+        transition-duration: .2s;
+        font-family: 'Maven Pro', sans-serif;
+        cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.action-button .upload:active{
+        border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    
+    visibility: hidden;
+    margin-top: 500px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    padding-top: 30px;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    margin-right: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  .preview-main{
+    border: 2px solid rgba(255, 255, 255, 0.239);
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  .clipping-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .opt{
+    padding: 2px;
+    place-content: center;
+    justify-content: center;
+    background: grey;
+    margin: 10px;
+    border-radius: 45%;
+    
+  }
+  .opt h5{
+    font-weight: bolder;
+    font-size: large;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+    @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
+    html{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Maven Pro', sans-serif;
+        background-image: linear-gradient(90deg, rgba(18, 207, 103, 0.761), rgba(10, 126, 62, 0.761));
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(255, 255, 255, 0.229);
+        position: relative;
+        width: 76%;
+        height: 570px;
+        border-radius: 4px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-top: 15px;
+        padding-bottom: 40px;
+    }
+    /* image area and preview */
+    .image-container{
+        padding: 20px;
+        width: 677px;
+        height: calc(100% - 100px);
+        border-right: 1px solid rgba(255, 255, 255, 0.239);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.239);
+    }
+    .image-workspace{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+    }
+    .preview-container{
+        border: 2px solid rgba(255, 255, 255, 0.239);
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 263px;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .preview-cover{
+        overflow: hidden;
+    }
+    .preview-container span{
+        position: absolute;
+        top: 66px;
+        left: 70px;
+    }
+    .crop{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .cropImageBtn{
+        background: rgba(10, 126, 62, 0.761);
+        border: none;
+        height: 30px;
+        border-radius: 10px;
+    }
+
+    /* side control */
+    .menu-controls{
+        position: absolute;
+        right: 20px;
+        bottom: 116px;
+        user-select: none;
+        width: 267px;
+    }
+    .menu-controls span{
+        display: block;
+        font-size: 13px;
+    }
+    .menu-controls li{
+        list-style: none;
+        height: auto;
+        display: inline-block;
+        margin-left: 40px;
+        margin-top: 6px;
+        position: relative;
+    }
+    .menu-controls li svg{
+        position: relative;
+        display: inline;
+        border-radius: 50%;
+        padding: 4px;
+        transition-duration: .4s;
+        margin-left: 10px;
+        border: 1px solid transparent;
+        fill: white;
+        background-color: rgba(255, 255, 255, 0.129);
+    }
+    .menu-controls li svg:active{
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .menu-controls .zoom,
+    .menu-controls .rotate,
+    .menu-controls .flip,
+    .menu-controls .move{
+        padding-left: 20px;
+        margin-bottom: 0px;
+        margin-top: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.239);
+        height: 64px;
+    }
+    
+    /* action button */
+    .action-button{
+        display: inline-block;
+        position: absolute;
+        bottom: 0px;
+        border-right: 1px solid rgba(255, 255, 255, 0.239);
+    }
+    .upload-btn{
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        align-self: center;
+        font-style: italic;
+        color: white;
+        font-weight: 600;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .upload{
+        font-size:medium;
+    }
+    .action-button .upload,
+    .action-button .download{
+        display: block;
+        width: 170px;
+        height: 35px;
+        margin: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: rgba(255, 255, 255, 0.129);
+        color: white;
+        
+        border-radius: 3px;
+        outline: none;
+        transition-duration: .2s;
+        font-family: 'Maven Pro', sans-serif;
+        cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .action-button .upload:active,
+    .action-button .download:active{
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+/* Popup container */
+.popup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    
+    visibility: hidden;
+    width: 1000px;
+    height: 500px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    margin-right: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  .preview-main{
+    border: 2px solid rgba(255, 255, 255, 0.239);
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  .clipping-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .opt{
+    padding: 2px;
+    place-content: center;
+    justify-content: center;
+    background: grey;
+    margin: 10px;
+    border-radius: 45%;
+    
+  }
+  .opt h5{
+    font-weight: bolder;
+    font-size: large;
+  }
+}
